@@ -19,6 +19,10 @@ function printPages(pages) {
         let li = document.createElement("li")
         li.innerText = page.title.rendered;
 
+        li.addEventListener("click", () => {
+            console.log("page", page.title.rendered);
+        })
+
         ul.appendChild(li)
     })
     menu.appendChild(ul);
