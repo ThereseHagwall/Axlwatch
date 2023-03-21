@@ -2,8 +2,8 @@ let menu = document.getElementById("menu");
 
 export default async function getMenu() {
     try {
-        const resopnse = await fetch("https://axlwatch.se/wp-json/wp/v2/pages")
-        const data = await resopnse.json();
+        const response = await fetch("https://axlwatch.se/wp-json/wp/v2/pages")
+        const data = await response.json();
         printPages(data);
     } catch (error) {
         console.error(error);
