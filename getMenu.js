@@ -1,5 +1,7 @@
 import fetchData from "./getNews.js"
+import getProducts from "./getProducts.js";
 let menu = document.getElementById("menu");
+let root = document.getElementById("root");
 
 export default async function getMenu() {
     try {
@@ -23,7 +25,11 @@ function printPages(pages) {
         li.addEventListener("click", () => {
             console.log("page", page.title.rendered);
             if (page.title.rendered === "Nyheter") {
+                root.innerText = "";
                 fetchData();
+            } else if (page.title.rendered === "Butik") {
+                root.innerText = "";
+                getProducts();
             }
         })
 

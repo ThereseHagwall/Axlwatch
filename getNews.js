@@ -1,4 +1,4 @@
-const getWrapper = document.querySelector(".wrapper")
+const root = document.getElementById("root");
 
 export default async function fetchData() {
     try {
@@ -23,7 +23,7 @@ function printNews(posts) {
         aLink.href = post.link
         postLi.innerText = post.title.rendered
 
-        postLi.addEventListener("click", () =>{
+        postLi.addEventListener("click", () => {
             console.log(post.link)
 
         })
@@ -31,6 +31,6 @@ function printNews(posts) {
         ul.appendChild(postLi)
 
     })
-    getWrapper.append(ul)
+    root.append(ul)
 }
 
