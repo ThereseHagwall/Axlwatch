@@ -1,3 +1,4 @@
+import fetchData from "./getNews.js"
 let menu = document.getElementById("menu");
 
 export default async function getMenu() {
@@ -21,6 +22,9 @@ function printPages(pages) {
 
         li.addEventListener("click", () => {
             console.log("page", page.title.rendered);
+            if (page.title.rendered === "Nyheter") {
+                fetchData();
+            }
         })
 
         ul.appendChild(li)

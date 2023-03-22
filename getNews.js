@@ -12,8 +12,6 @@ export default async function fetchData() {
     }
 }
 
-fetchData()
-
 function printNews(posts) {
     const ul = document.createElement("ul")
     console.log("funktionen", posts[0].title.rendered)
