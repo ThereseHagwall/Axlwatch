@@ -1,4 +1,3 @@
-
 const getWrapper = document.querySelector(".wrapper")
 
 export default async function fetchData() {
