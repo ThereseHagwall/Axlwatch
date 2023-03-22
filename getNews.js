@@ -7,31 +7,31 @@ export default async function getNews() {
 
         printNews(getData)
     } catch (error) {
-        console.error(error)
+        console.error(error);
     }
 }
 
 getNews()
 
 function printNews(posts) {
-    const ul = document.createElement("ul")
+    const ul = document.createElement("ul");
 
     posts.map((post) => {
 
-        const postLi = document.createElement("li")
-        const aLink = document.createElement("a")
+        const postLi = document.createElement("li");
+        const aLink = document.createElement("a");
 
-        aLink.href = post.link
-        postLi.innerText = post.title.rendered
+        aLink.href = post.link;
+        postLi.innerText = post.title.rendered;
 
         postLi.addEventListener("click", () => {
-            console.log(post.link)
+            console.log(post.link);
 
         })
-        postLi.appendChild(aLink)
-        ul.appendChild(postLi)
+        postLi.appendChild(aLink);
+        ul.appendChild(postLi);
 
     })
-    root.append(ul)
+    root.append(ul);
 }
 

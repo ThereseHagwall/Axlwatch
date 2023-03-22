@@ -16,10 +16,10 @@ export default async function getMenu() {
 getMenu();
 
 function printPages(pages) {
-    let ul = document.createElement("ul")
+    let ul = document.createElement("ul");
     pages.map(page => {
         // console.log("page", page.title.rendered);
-        let li = document.createElement("li")
+        let li = document.createElement("li");
         li.innerText = page.title.rendered;
 
         li.addEventListener("click", () => {
@@ -34,7 +34,7 @@ function printPages(pages) {
             }
         })
 
-        ul.appendChild(li)
+        ul.appendChild(li);
     })
     menu.appendChild(ul);
 }
