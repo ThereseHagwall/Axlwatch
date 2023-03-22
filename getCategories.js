@@ -13,8 +13,6 @@ export default async function getCategories() {
 
 
 function printCategories(categorys) {
-
-
     const ul = document.createElement("ul");
     ul.className = "productCategoryMenu";
     categorys.map(category => {

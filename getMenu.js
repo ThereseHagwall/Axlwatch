@@ -8,6 +8,7 @@ let root = document.getElementById("root");
 const container = document.getElementById("containerWrapper");
 const productCategory = document.getElementById("productCategory");
 
+
 export default async function getMenu() {
     try {
         const response = await fetch("https://axlwatch.se/wp-json/wp/v2/pages")
