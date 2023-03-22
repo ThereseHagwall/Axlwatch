@@ -36,6 +36,7 @@ function printPages(pages) {
                 getNews();
             } else if (page.title.rendered === "Butik") {
                 root.innerText = "";
+                productCategory.innerText = "";
                 getCategories();
                 getProducts();
             }
