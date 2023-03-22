@@ -1,3 +1,4 @@
+'use strict';
 const productCategory = document.getElementById("productCategory");
 
 export default async function getCategories() {

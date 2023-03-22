@@ -1,3 +1,5 @@
+'use strict';
+
 import getCategories from "./getCategories.js";
 import getNews from "./getNews.js"
 import getProducts from "./getProducts.js";

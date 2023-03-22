@@ -1,3 +1,5 @@
+'use strict';
+
 const root = document.getElementById("root");
 
 export default async function getNews() {

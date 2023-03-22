@@ -1,3 +1,5 @@
+'use strict';
+
 import getNews from "./getNews.js"
 import getMenu from "./getMenu.js";
 import getProducts from "./getProducts.js";
