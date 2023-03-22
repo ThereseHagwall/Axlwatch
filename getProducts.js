@@ -10,13 +10,15 @@ export default async function getProducts() {
         let productName = document.createElement("div");
         let img = document.createElement("img");
         img.className = "productImg";
-        let price = document.createElement("p");
-
+        let currentPrice = document.createElement("p");
+        let oldPrice = document.createElement("p");
         productName.innerText = data.name;
-        price.innerText = `${data.prices.price} kr`;
+        currentPrice.innerText = `${data.prices.price} kr`;
+        oldPrice.innerText = `${data.prices.regular_price} kr`;
+        oldPrice.style.textDecoration = "line-through";
         img.src = data.images[0].src;
 
-        productContainer.append(img, productName, price);
+        productContainer.append(img, productName, oldPrice, currentPrice);
         root.append(productContainer);
     })
 }

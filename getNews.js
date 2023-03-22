@@ -14,11 +14,12 @@ export default async function getNews() {
 
 
 function printNews(posts) {
-    const ul = document.createElement("ul");
 
     posts.map((post) => {
+        const newsContainer = document.createElement("div");
+        newsContainer.className = "newsContainer";
 
-        const postLi = document.createElement("li");
+        const postLi = document.createElement("p");
         const aLink = document.createElement("a");
 
         aLink.href = post.link;
@@ -28,10 +29,11 @@ function printNews(posts) {
             console.log(post.link);
 
         })
+        
         postLi.appendChild(aLink);
-        ul.appendChild(postLi);
+        newsContainer.appendChild(postLi)
 
+        root.append(newsContainer);
     })
-    root.append(ul);
 }
 
