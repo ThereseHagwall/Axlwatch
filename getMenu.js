@@ -19,6 +19,7 @@ getMenu();
 
 function printPages(pages) {
     let ul = document.createElement("ul");
+    ul.className = "headerMenu";
     pages.map(page => {
         // console.log("page", page.title.rendered);
         let li = document.createElement("li");

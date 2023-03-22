@@ -15,6 +15,7 @@ function printCategories(categorys) {
 
 
     const ul = document.createElement("ul");
+    ul.className = "productCategoryMenu";
     categorys.map(category => {
         const li = document.createElement("li");
         const aLink = document.createElement("a");

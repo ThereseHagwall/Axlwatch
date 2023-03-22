@@ -1,0 +1,39 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+body {
+    width: 100%;
+    background-color: lightgrey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.headerMenu {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.productCategoryMenu {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+#menu {
+    padding: 0;
+}
+
+.productImg {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#root {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
