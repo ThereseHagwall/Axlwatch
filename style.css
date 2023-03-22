@@ -46,6 +46,15 @@ body {
     justify-content: center;
 }
 
+#containerWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
 .newsContainer {
     display: flex;
     flex-direction: column;

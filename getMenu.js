@@ -5,6 +5,7 @@ import getNews from "./getNews.js"
 import getProducts from "./getProducts.js";
 let menu = document.getElementById("menu");
 let root = document.getElementById("root");
+const container = document.getElementById("containerWrapper");
 const productCategory = document.getElementById("productCategory");
 
 export default async function getMenu() {
@@ -33,10 +34,12 @@ function printPages(pages) {
             if (page.title.rendered === "Nyheter") {
                 productCategory.innerText = "";
                 root.innerText = "";
+                container.innerText = "";
                 getNews();
             } else if (page.title.rendered === "Butik") {
                 root.innerText = "";
                 productCategory.innerText = "";
+                container.innerText = "";
                 getCategories();
                 getProducts();
             }

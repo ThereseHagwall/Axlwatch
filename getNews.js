@@ -1,6 +1,7 @@
 'use strict';
 
-const root = document.getElementById("root");
+// const root = document.getElementById("root");
+const container = document.getElementById("containerWrapper");
 
 export default async function getNews() {
     try {
@@ -36,8 +37,7 @@ function printNews(posts) {
 
         postLi.appendChild(aLink);
         newsContainer.append(postLi, info)
-
-        root.append(newsContainer);
+        container.append(newsContainer);
     })
 }
 
