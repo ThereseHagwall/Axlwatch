@@ -27,7 +27,7 @@ function printNews(posts) {
         console.log(post.excerpt.rendered);
         aLink.href = post.link;
         postLi.innerText = post.title.rendered;
-        info.innerText = post.excerpt.rendered;
+        info.innerHTML = post.excerpt.rendered;
 
         postLi.addEventListener("click", () => {
             console.log(post.link);
