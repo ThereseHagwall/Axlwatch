@@ -18,11 +18,12 @@ getMenu();
 function printPages(pages) {
     let ul = document.createElement("ul")
     pages.map(page => {
-        console.log("page", page.title.rendered);
+        // console.log("page", page.title.rendered);
         let li = document.createElement("li")
         li.innerText = page.title.rendered;
 
         li.addEventListener("click", () => {
+            // console.log("page", page.title.rendered);
             console.log("page", page.title.rendered);
             if (page.title.rendered === "Nyheter") {
                 root.innerText = "";
