@@ -1,3 +1,4 @@
+import fetchData from "./getNews.js"
 import getMenu from "./getMenu.js";
 import getProducts from "./getProducts.js";
 
@@ -19,4 +20,3 @@ async function getPageName() {
 }
 
 getPageName();
-
