@@ -1,4 +1,4 @@
-const getWrapper = document.querySelector(".wrapper");
+const productCategory = document.getElementById("productCategory");
 
 export default async function getCategories() {
     try {
@@ -9,8 +9,6 @@ export default async function getCategories() {
         console.error(error);
     }
 }
-
-getCategories();
 
 
 function printCategories(categorys) {
@@ -27,5 +25,5 @@ function printCategories(categorys) {
         li.appendChild(aLink);
         ul.appendChild(li);
     })
-    getWrapper.appendChild(ul);
+    productCategory.appendChild(ul);
 }

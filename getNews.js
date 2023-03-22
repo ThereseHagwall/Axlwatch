@@ -11,7 +11,7 @@ export default async function getNews() {
     }
 }
 
-getNews()
+
 
 function printNews(posts) {
     const ul = document.createElement("ul");
