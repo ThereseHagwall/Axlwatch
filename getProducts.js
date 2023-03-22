@@ -16,7 +16,11 @@ export default async function getProducts() {
         let currentPrice = document.createElement("p");
         let oldPrice = document.createElement("p");
         productName.innerText = data.name;
-        currentPrice.innerText = `${data.prices.price} kr`;
+        if (data.prices.price === data.prices.regular_price) {
+            currentPrice.innerText = "";
+        } else {
+            currentPrice.innerText = `${data.prices.price} kr`;
+        }
         oldPrice.innerText = `${data.prices.regular_price} kr`;
         oldPrice.style.textDecoration = "line-through";
         img.src = data.images[0].src;
