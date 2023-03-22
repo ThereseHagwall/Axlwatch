@@ -1,5 +1,9 @@
+import getMenu from "./getMenu.js";
+import getProducts from "./getProducts.js";
+
 let pageName = document.getElementById("pageName");
 let description = document.getElementById("description");
+
 
 async function getPageName() {
     try {
