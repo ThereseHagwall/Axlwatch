@@ -43,4 +43,22 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsContainer {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 0 10px 0 10px;
+    max-width: 500px;
+    align-items: center;
+}
+
+#wrapper {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
