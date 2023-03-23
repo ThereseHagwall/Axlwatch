@@ -1,7 +1,6 @@
 'use strict';
 
 let root = document.getElementById("root");
-const container = document.getElementById("containerWrapper");
 
 export default async function getProducts() {
     let response = await fetch("https://axlwatch.se/wp-json/wc/store/products");
