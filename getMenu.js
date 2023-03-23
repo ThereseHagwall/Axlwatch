@@ -35,7 +35,6 @@ function printPages(pages) {
     let ulFooter = document.createElement("ul");
     ulFooter.className = "footerMenu";
     pages.map(page => {
-        console.log("page", page);
         let li = document.createElement("li");
         if (page.title.rendered === "Kassa") {
             li.innerText = "";
