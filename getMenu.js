@@ -15,6 +15,8 @@ let footerMenu = document.getElementById("footerMenu");
 let root = document.getElementById("root");
 const container = document.getElementById("containerWrapper");
 const productCategory = document.getElementById("productCategory");
+const carousel = document.getElementById("carousel");
+
 
 
 export default async function getMenu() {
@@ -56,37 +58,44 @@ function printPages(pages) {
                 productCategory.innerText = "";
                 root.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getNews();
             } else if (page.title.rendered === "Butik") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getCategories();
                 getProducts();
             } else if (page.title.rendered === "Återbetalnings- och returpolicy") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getRefundsPolicy(page);
             } else if (page.title.rendered === "Om oss") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getAboutUs(page);
             } else if (page.title.rendered === "Mitt konto") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getMyAccount(page);
             } else if (page.title.rendered === "Varukorg") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getCart(page);
             } else if (page.title.rendered === "Privacy Policy") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                // carousel.innerHTML = "";
                 getPrivacyPolicy(page);
             }
         })

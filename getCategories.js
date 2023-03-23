@@ -4,6 +4,7 @@ import printCategory from "./printCategory.js"
 
 const productCategory = document.getElementById("productCategory");
 
+
 export default async function getCategories() {
     try {
         const response = await fetch("https://axlwatch.se/wp-json/wc/v3/products/categories");
