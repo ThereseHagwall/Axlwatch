@@ -14,6 +14,9 @@ export default async function getProducts() {
         img.className = "productImg";
         let currentPrice = document.createElement("p");
         let oldPrice = document.createElement("p");
+        let prodBtn = document.createElement("button");
+        prodBtn.className = "addToCartBtn";
+        prodBtn.innerText = "Lägg i varukorg";
         productName.innerText = data.name;
         if (data.prices.price === data.prices.regular_price) {
             oldPrice.innerText = "";
@@ -24,11 +27,15 @@ export default async function getProducts() {
         oldPrice.style.textDecoration = "line-through";
         img.src = data.images[0].src;
 
-        productContainer.addEventListener("click", () => {
+        img.addEventListener("click", () => {
             console.log("Product");
         })
 
-        productContainer.append(img, productName, oldPrice, currentPrice);
+        prodBtn.addEventListener("click", () => {
+            console.log("Läggs till i varukorgen")
+        })
+
+        productContainer.append(img, productName, oldPrice, currentPrice, prodBtn);
         root.append(productContainer);
     })
 }
