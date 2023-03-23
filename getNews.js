@@ -14,8 +14,6 @@ export default async function getNews() {
     }
 }
 
-
-
 function printNews(posts) {
 
     posts.map((post) => {
