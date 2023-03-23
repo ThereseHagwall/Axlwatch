@@ -1,4 +1,7 @@
-'use strict';
+'use strict'
+
+import printCategory from "./printCategory.js"
+
 const productCategory = document.getElementById("productCategory");
 
 export default async function getCategories() {
@@ -12,15 +15,17 @@ export default async function getCategories() {
 }
 
 
-function printCategories(categorys) {
+function printCategories(categories) {
     const ul = document.createElement("ul");
     ul.className = "productCategoryMenu";
-    categorys.map(category => {
+    categories.map(category => {
         const li = document.createElement("li");
         const aLink = document.createElement("a");
         aLink.innerText = category.name;
+
         aLink.addEventListener("click", () => {
-            // Skall öppna en funktion som går till den kategorin man tryckt på
+            console.log(category.id);
+            printCategory(category)
         })
         li.appendChild(aLink);
         ul.appendChild(li);
