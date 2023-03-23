@@ -48,8 +48,6 @@ function printPages(pages) {
             ulFooter.appendChild(li);
         }
         li.addEventListener("click", () => {
-            // console.log("page", page.title.rendered);
-            console.log("page", page.title.rendered);
             if (page.title.rendered === "Hem") {
                 root.innerText = "";
                 productCategory.innerText = "";
