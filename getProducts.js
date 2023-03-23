@@ -7,9 +7,9 @@ export default async function getProducts() {
     let data = await response.json();
 
     data.map(data => {
-        let productContainer = document.createElement("div");
+        let productContainer = document.createElement("section");
         productContainer.className = "productContainer";
-        let productName = document.createElement("div");
+        let productName = document.createElement("h4");
         let img = document.createElement("img");
         img.className = "productImg";
         let currentPrice = document.createElement("p");
