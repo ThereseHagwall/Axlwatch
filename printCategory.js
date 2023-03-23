@@ -33,6 +33,10 @@ export default async function printCategory(category) {
             oldPrice.style.textDecoration = "line-through";
             img.src = product.images[0].src;
 
+            prodCon.addEventListener("click", ()=>{
+                console.log("Product");
+            })
+
             prodCon.append(img, productName, oldPrice, currentPrice);
             root.append(prodCon);
 

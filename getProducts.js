@@ -24,6 +24,10 @@ export default async function getProducts() {
         oldPrice.style.textDecoration = "line-through";
         img.src = data.images[0].src;
 
+        productContainer.addEventListener("click", () => {
+            console.log("Product");
+        })
+
         productContainer.append(img, productName, oldPrice, currentPrice);
         root.append(productContainer);
     })
