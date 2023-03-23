@@ -7,7 +7,7 @@ let root = document.getElementById("root");
 
 export default async function printCategory(category) {
 
-    const fetchCategoryId = categoryUrl+category.id;
+    const fetchCategoryId = categoryUrl + category.id;
 
     try {
         const response = await fetch(fetchCategoryId);
@@ -36,7 +36,7 @@ export default async function printCategory(category) {
             oldPrice.style.textDecoration = "line-through";
             img.src = product.images[0].src;
 
-            img.addEventListener("click", ()=>{
+            img.addEventListener("click", ()=> {
                 console.log("Product");
             })
 
@@ -47,7 +47,7 @@ export default async function printCategory(category) {
             img.append(img, productName, oldPrice, currentPrice, prodBtn);
             root.append(prodCon);
 
-    })
+        })
 
     } catch (error) {
         console.error(error);
