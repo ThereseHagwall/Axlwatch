@@ -4,6 +4,7 @@ import getNews from "./getNews.js"
 import getMenu from "./getMenu.js";
 import getProducts from "./getProducts.js";
 import getCategories from "./getCategories.js";
+import getHome from "./getHome.js";
 
 let pageName = document.getElementById("pageName");
 let description = document.getElementById("description");
@@ -23,3 +24,4 @@ async function getPageName() {
 }
 
 getPageName();
+getHome();

@@ -97,3 +97,8 @@ li:hover {
     border: 2px solid black;
     box-shadow: 10px 5px 5px grey;
 }
+
+.frontImg {
+    max-width: 400px;
+    margin: 0 200px 0 0;
+}
