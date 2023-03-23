@@ -24,7 +24,7 @@ export default async function getProducts() {
         oldPrice.style.textDecoration = "line-through";
         img.src = data.images[0].src;
 
-        productContainer.addEventListener("click", () => {
+        img.addEventListener("click", () => {
             console.log("Product");
         })
 
