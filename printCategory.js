@@ -36,7 +36,7 @@ export default async function printCategory(category) {
             oldPrice.style.textDecoration = "line-through";
             img.src = product.images[0].src;
 
-            img.addEventListener("click", ()=> {
+            img.addEventListener("click", () => {
                 console.log("Product");
             })
 
@@ -44,7 +44,7 @@ export default async function printCategory(category) {
                 console.log("Läggs till i varukorgen")
             })
 
-            img.append(img, productName, oldPrice, currentPrice, prodBtn);
+            prodCon.append(img, productName, oldPrice, currentPrice, prodBtn);
             root.append(prodCon);
 
         })
