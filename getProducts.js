@@ -33,6 +33,17 @@ export default async function getProducts() {
 
         prodBtn.addEventListener("click", () => {
             console.log("Läggs till i varukorgen")
+            
+            // HÄMTA
+            let cart = JSON.parse(localStorage.getItem("cart"))
+            console.log("cart från LS", cart);
+
+            // ÄNDRA
+            cart.push(data.id);
+
+            // SPARA
+            localStorage.setItem("cart", JSON.stringify(cart))
+            printCart();
         })
 
         productContainer.append(img, productName, oldPrice, currentPrice, prodBtn);
