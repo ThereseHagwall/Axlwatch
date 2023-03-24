@@ -90,7 +90,7 @@ function printLoggedInUser() {
     userName.append(printUserName, logoutBtn)
 }
 
-fetch("https://axlwatch.se/rest/wp-json/")
+fetch("https://axlwatch.se/wp-json/")
 .then(res => res.json())
 .then(data => {
     console.log("data", data);
@@ -99,14 +99,14 @@ fetch("https://axlwatch.se/rest/wp-json/")
 .catch(err => console.log("err", err));
 
 
-fetch("https://axlwatch.se/rest/wp-json/wp/v2/pages") 
+fetch("https://axlwatch.se/wp-json/wp/v2/pages") 
 .then(res => res.json())
 .then(data => {
     console.log("posts", data);
     printPages(data);
 })
 
-fetch("https://axlwatch.se/rest/wp-json/wc/store/products")
+fetch("https://axlwatch.se/wp-json/wc/store/products")
 .then(res => res.json())
 .then(data => {
     console.log("produkter", data);
@@ -118,7 +118,7 @@ function printCart() {
     
     if(JSON.parse(localStorage.getItem("cart")).length > 0) {
         console.log("Finns produkter");
-        cart.innerText = (JSON.parse(localStorage.getItem("cart").length + 1)) + " st produkter";
+        cart.innerText = (JSON.parse(localStorage.getItem("cart")).length) + " st produkter";
 
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";
@@ -191,7 +191,7 @@ function postOrder() {
     
     }
 
-    fetch("https://axlwatch.se/rest/wp-json/wc/v3/orders", {
+    fetch("https://axlwatch.se/wp-json/wc/v3/orders", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
