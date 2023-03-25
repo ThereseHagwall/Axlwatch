@@ -1,23 +1,29 @@
 'use strict';
 
+import printCart from "./printCart.js";
+import cartLs from "./createCartLs.js";
+
 let root = document.getElementById("root");
 
 export default async function getProducts() {
+
+
     let response = await fetch("https://axlwatch.se/wp-json/wc/store/products");
     let data = await response.json();
 
     data.map(data => {
         let productContainer = document.createElement("section");
-        productContainer.className = "productContainer";
         let productName = document.createElement("h4");
         let img = document.createElement("img");
-        img.className = "productImg";
         let currentPrice = document.createElement("p");
         let oldPrice = document.createElement("p");
         let prodBtn = document.createElement("button");
+        productContainer.className = "productContainer";
+        img.className = "productImg";
         prodBtn.className = "addToCartBtn";
         prodBtn.innerText = "Lägg i varukorg";
         productName.innerText = data.name;
+
         if (data.prices.price === data.prices.regular_price) {
             oldPrice.innerText = "";
         } else {
@@ -32,8 +38,9 @@ export default async function getProducts() {
         })
 
         prodBtn.addEventListener("click", () => {
+            cartLs()
             console.log("Läggs till i varukorgen")
-            
+
             // HÄMTA
             let cart = JSON.parse(localStorage.getItem("cart"))
             console.log("cart från LS", cart);
@@ -43,6 +50,7 @@ export default async function getProducts() {
 
             // SPARA
             localStorage.setItem("cart", JSON.stringify(cart))
+            console.log("DET SKA SPARAS");
             printCart();
         })
 
