@@ -2,7 +2,7 @@
 
 import printCart from "./printCart.js";
 
-export default function cartLs() {
+export default function createCartLs() {
 
         if (localStorage.getItem("cart")) {
         console.log("Finns en kundvagn");

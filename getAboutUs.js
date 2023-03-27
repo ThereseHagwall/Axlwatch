@@ -1,3 +1,5 @@
+'use strict';
+
 const container = document.getElementById("containerWrapper");
 
 export default function getAboutUs(page){

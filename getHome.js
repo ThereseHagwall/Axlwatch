@@ -1,3 +1,5 @@
+'use strict';
+
 let root = document.getElementById("root");
 
 export default function getHome() {

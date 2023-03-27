@@ -2,8 +2,11 @@
 
 const categoryUrl = "https://axlwatch.se/index.php/wp-json/wc/v3/products?category="
 
-let root = document.getElementById("root");
+import singelProductPage from "./singelProduct.js";
+import createCartLs from "./createCartLs.js";
+import pushGetSaveLS from "./pushGetSaveLS.js";
 
+let root = document.getElementById("root");
 
 export default async function printCategory(category) {
 
@@ -18,12 +21,12 @@ export default async function printCategory(category) {
 
             const prodCon = document.createElement("div");
             prodCon.className = "productContainer";
-            let productName = document.createElement("div");
-            let img = document.createElement("img");
+            const productName = document.createElement("div");
+            const img = document.createElement("img");
             img.className = "productImg";
-            let currentPrice = document.createElement("p");
-            let oldPrice = document.createElement("p");
-            let prodBtn = document.createElement("button");
+            const currentPrice = document.createElement("p");
+            const oldPrice = document.createElement("p");
+            const prodBtn = document.createElement("button");
             prodBtn.className = "addToCartBtn";
             prodBtn.innerText = "Lägg i varukorg";
             productName.innerText = product.name;
@@ -37,11 +40,15 @@ export default async function printCategory(category) {
             img.src = product.images[0].src;
 
             img.addEventListener("click", () => {
-                console.log("Product");
+                singelProductPage(product.id)
+
             })
 
             prodBtn.addEventListener("click", () => {
+                createCartLs()
                 console.log("Läggs till i varukorgen")
+                pushGetSaveLS(data.id)
+
             })
 
             prodCon.append(img, productName, oldPrice, currentPrice, prodBtn);
