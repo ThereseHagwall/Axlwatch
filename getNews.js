@@ -1,17 +1,17 @@
-const root = document.getElementById("root");
+'use strict';
+
+// const root = document.getElementById("root");
+const container = document.getElementById("containerWrapper");
 
 export default async function getNews() {
     try {
         const response = await fetch("https://axlwatch.se/wp-json/wp/v2/posts");
         const getData = await response.json();
-        console.log(getData);
         printNews(getData)
     } catch (error) {
         console.error(error);
     }
 }
-
-
 
 function printNews(posts) {
 
@@ -22,10 +22,9 @@ function printNews(posts) {
 
         const postLi = document.createElement("h2");
         const aLink = document.createElement("a");
-        console.log(post.excerpt.rendered);
         aLink.href = post.link;
         postLi.innerText = post.title.rendered;
-        info.innerText = post.excerpt.rendered;
+        info.innerHTML = post.excerpt.rendered;
 
         postLi.addEventListener("click", () => {
             console.log(post.link);
@@ -34,8 +33,7 @@ function printNews(posts) {
 
         postLi.appendChild(aLink);
         newsContainer.append(postLi, info)
-
-        root.append(newsContainer);
+        container.append(newsContainer);
     })
 }
 
