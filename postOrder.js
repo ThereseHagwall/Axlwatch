@@ -1,9 +1,22 @@
 'use strict';
 
 import printCart from "./printCart.js";
-
-export default function postOrder() {
+export default function postOrder(event) {
+    event.preventDefault();
     console.log("Skicka order");
+
+    const nameInput = document.querySelector('#name');
+    const name = nameInput ? nameInput.value : '';
+    const addressInput = document.querySelector('#address');
+    const address = addressInput ? addressInput.value : '';
+    const cityInput = document.querySelector('#city');
+    const city = cityInput ? cityInput.value : '';
+    const postcodeInput = document.querySelector('#postcode');
+    const postcode = postcodeInput ? postcodeInput.value : '';
+    const emailInput = document.querySelector('#email');
+    const email = emailInput ? emailInput.value : '';
+    const phoneInput = document.querySelector('#phone');
+    const phone = phoneInput ? phoneInput.value : '';
 
     // SKAPA BODY
     let order = {
@@ -12,24 +25,24 @@ export default function postOrder() {
         set_paid: true,
         // customer_id: 1,
         billing: {
-            first_name: "Janne",
-            last_name: "Kemi",
-            adress_1: "Gatan 10",
-            city: "Uddebo",
-            postcode: "514 92",
+            first_name: name.split(" ")[0],
+            last_name: name.split(" ")[1] || "",
+            address_1: address,
+            city: city,
+            postcode: postcode,
             country: "SE",
-            email: "janne@hiveandfive.se",
-            phone: "070123456"
+            email: email,
+            phone: phone
         },
         shipping: {
-            first_name: "Janne",
-            last_name: "Kemi",
-            adress_1: "Gatan 10",
-            city: "Uddebo",
-            postcode: "514 92",
+            first_name: name.split(" ")[0],
+            last_name: name.split(" ")[1] || "",
+            address_1: address,
+            city: city,
+            postcode: postcode,
             country: "SE",
-            email: "janne@hiveandfive.se",
-            phone: "070123456"
+            email: email,
+            phone: phone
         },
         line_items: [
             // LOOPA IGENOM KUNDVAGN

@@ -2,7 +2,6 @@
 
 import postOrder from "./postOrder.js";
 
-
 export default function printCart() {
 
     let cart = document.getElementById("cart");
@@ -18,12 +17,6 @@ export default function printCart() {
             localStorage.setItem("cart", JSON.stringify([]));
             printCart();
         })
-
-        let sendOrderBtn = document.createElement("button");
-        sendOrderBtn.innerText = "Skicka order";
-
-        sendOrderBtn.addEventListener("click", postOrder)
-        cart.append(emptyCartBtn, sendOrderBtn);
 
     } else {
         console.log("Tom kundvagn");
