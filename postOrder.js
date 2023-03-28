@@ -1,6 +1,8 @@
 'use strict';
 
 import printCart from "./printCart.js";
+
+
 export default function postOrder(event) {
     event.preventDefault();
     console.log("Skicka order");
@@ -63,6 +65,7 @@ export default function postOrder(event) {
             }
         ]
     }
+event.target.reset();
 
     console.log(order)
     fetch("https://axlwatch.se/wp-json/wc/v3/orders", {
