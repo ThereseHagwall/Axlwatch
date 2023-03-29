@@ -36,9 +36,20 @@ export default async function getCart() {
             <input type="submit" value="Beställ">
         `;
         cart.appendChild(form);
-
-        // Add event listener to form
         document.querySelector('#order-form').addEventListener('submit', postOrder);
+        // Add event listener to form
+        document.querySelector('#order-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // clear the "cart" element
+        let cart = document.getElementById("root");
+        cart.innerHTML = '';
+        // add a message to the "cart" element
+        let message = document.createElement('p');
+        message.textContent = 'Tack för beställningen.';
+        cart.appendChild(message);
+});
+
+
 
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";

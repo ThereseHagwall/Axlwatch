@@ -31,6 +31,7 @@ export default function postOrder(event) {
         lineItems[id] = { product_id: id, quantity: 1 };
     }
     });
+    
     // SKAPA BODY
     let order = {
         payment_method: "bacs",
