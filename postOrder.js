@@ -31,7 +31,6 @@ export default function postOrder(event) {
         lineItems[id] = { product_id: id, quantity: 1 };
     }
     });
-const result = Object.values(lineItems);
     // SKAPA BODY
     let order = {
         payment_method: "bacs",
