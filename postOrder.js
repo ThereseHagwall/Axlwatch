@@ -20,6 +20,8 @@ export default function postOrder(event) {
     const phoneInput = document.querySelector('#phone');
     const phone = phoneInput ? phoneInput.value : '';
 
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    const lineItems = cart.map((id) => ({ product_id: id, quantity: 1 }));
     // SKAPA BODY
     let order = {
         payment_method: "bacs",
@@ -46,17 +48,10 @@ export default function postOrder(event) {
             email: email,
             phone: phone
         },
-        line_items: [
+        line_items:
             // LOOPA IGENOM KUNDVAGN
-            {
-                product_id: 52,
-                quantity: 1
-            },
-            {
-                product_id: 69,
-                quantity: 1
-            }
-        ],
+            lineItems,
+
         shipping_lines: [
             {
                 method_id: "flat_rate",
