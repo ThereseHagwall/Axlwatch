@@ -40,14 +40,14 @@ export default async function getCart() {
         // Add event listener to form
         document.querySelector('#order-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        // clear the "cart" element
-        let cart = document.getElementById("root");
-        cart.innerHTML = '';
-        // add a message to the "cart" element
-        let message = document.createElement('p');
-        message.textContent = 'Tack för beställningen.';
-        cart.appendChild(message);
-});
+//         // clear the "cart" element
+            let cart = document.getElementById("root");
+            cart.innerHTML = '';
+//         // add a message to the "cart" element
+            let message = document.createElement('p');
+            message.textContent = `Vi behandlar din order!`;
+            cart.appendChild(message);
+ });
 
 
 
@@ -65,7 +65,6 @@ export default async function getCart() {
         console.log("Tom kundvagn");
         cart.innerText = "Inga produkter"
     }
-    document.querySelector('#order-form').reset();
 }
 
 
