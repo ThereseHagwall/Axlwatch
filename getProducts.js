@@ -3,6 +3,7 @@
 import createCartLs from "./createCartLs.js";
 import singelProductPage from "./singelProduct.js";
 import pushGetSaveLS from "./pushGetSaveLS.js";
+import printProductCart from "./printProductCart.js";
 
 let root = document.getElementById("root");
 
@@ -44,6 +45,7 @@ export default async function getProducts() {
             createCartLs()
             console.log("Läggs till i varukorgen")
             pushGetSaveLS(data.id)
+            printProductCart()
         })
 
         productContainer.append(img, productName, oldPrice, currentPrice, prodBtn);
