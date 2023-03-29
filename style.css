@@ -1,26 +1,47 @@
 .container {
     max-width: 1200px;
     margin: auto;
+    background-color: lightgray;
+    opacity: 0.95;
+    
 }
 
 body {
+    background-image:url('images/hallstatt.jpg');
+    background-size: cover;
+    
+    
     width: 100%;
-    background-color: lightgrey;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
 }
 
 #pageName {
     font-size: 46px;
+    justify-content: center;
+    text-align: center;
+}
+
+#description {
+    justify-content: center;
+    text-align: center;
 }
 
 .headerMenu {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     list-style-type: none;
-    gap: 10px;
-    background-color: rgb(127, 204, 255);
-    font-size: 30px;
-    height: 50px;
+    text-align: center;
+    gap: 20px;
+    background: linear-gradient(#a7a7a7, #9198e5);
+    font-optical-sizing: auto;
+    height: 60px;
+    
 }
 
 .footerMenu {
@@ -28,14 +49,24 @@ body {
     justify-content: center;
     list-style-type: none;
     gap: 10px;
-    background-color: rgb(127, 204, 255);
-    font-size: 20px;
-    height: 50px;
+    background: linear-gradient(#a7a7a7, #9198e5);
+    font-optical-sizing: auto;
+    height: 60px;
+    vertical-align: middle;
 }
 
 li:hover {
     cursor: pointer;
     text-decoration: underline;
+    
+}
+
+li {
+    display: flex;
+    vertical-align: middle;
+    padding-top: 12px;
+    gap: 10px;
+    justify-content: center;
 }
 
 .productCategoryMenu {
@@ -88,7 +119,7 @@ li:hover {
 
 #wrapper {
     /* min-height: 200px; */
-    /* display: flex; */
+    /*display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -102,3 +133,16 @@ li:hover {
     max-width: 400px;
     margin: 0 200px 0 0;
 }
+
+@media screen and (min-width: 320px) {
+    body {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    body {
+      font-size: 22px;
+    }
+  }
+
+
