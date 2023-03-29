@@ -9,6 +9,7 @@ import getHome from "./getHome.js";
 import getMyAccount from "./getMyAccount.js";
 import getPrivacyPolicy from "./getPrivacyPolicy.js";
 import getRefundsPolicy from "./getRefundsPolicy.js";
+import getContactInfo from "./getContactInfo.js";
 
 let headerMenu = document.getElementById("headerMenu");
 let footerMenu = document.getElementById("footerMenu");
@@ -41,7 +42,7 @@ function printPages(pages) {
         } else {
             li.innerText = page.title.rendered;
         }
-        if (page.title.rendered === "Varukorg" || page.title.rendered === "Om oss" || page.title.rendered === "Hem" || page.title.rendered === "Nyheter" || page.title.rendered === "Butik") {
+        if (page.title.rendered === "Kontakt" || page.title.rendered === "Om oss" || page.title.rendered === "Hem" || page.title.rendered === "Nyheter" || page.title.rendered === "Butik" || page.title.rendered === "Varukorg") {
             ulHeader.appendChild(li);
         } else {
             ulFooter.appendChild(li);
@@ -88,6 +89,11 @@ function printPages(pages) {
                 productCategory.innerText = "";
                 container.innerText = "";
                 getPrivacyPolicy(page);
+            } else if (page.title.rendered === "Kontakt") {
+                root.innerText = "";
+                productCategory.innerText = "";
+                container.innerText = "";
+                getContactInfo(page);
             }
         })
     })
