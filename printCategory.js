@@ -43,7 +43,6 @@ export default async function printCategory(category) {
                 singelProductPage(product.id)
 
             })
-
             prodBtn.addEventListener("click", () => {
                 createCartLs()
                 let pushedItem = document.createElement('h5');
@@ -52,7 +51,7 @@ export default async function printCategory(category) {
                     pushedItem.innerText = "";
                 }, 2000);
                 prodCon.appendChild(pushedItem);
-                pushGetSaveLS(data.id)
+                pushGetSaveLS(product.id)
 
             })
 

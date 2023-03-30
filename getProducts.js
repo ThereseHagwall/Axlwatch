@@ -44,7 +44,6 @@ export default async function getProducts() {
             setTimeout(function () {
                 pushedItem.innerText = "";
             }, 2000);
-
             pushGetSaveLS(data.id)
             productContainer.appendChild(pushedItem);
         })

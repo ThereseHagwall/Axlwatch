@@ -61,7 +61,7 @@ export default function postOrder(event) {
     }
 event.target.reset();
 
-    // console.log(order)
+
     fetch("https://axlwatch.se/wp-json/wc/v3/orders", {
         method: "POST",
         headers: {
@@ -71,7 +71,6 @@ event.target.reset();
     })
     .then(res => res.json())
     .then(returnData => {
-        // console.log("Order skickad", returnData);
 
         localStorage.setItem("cart", JSON.stringify([]));
         printCart();

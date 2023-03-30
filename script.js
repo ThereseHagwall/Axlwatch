@@ -16,7 +16,6 @@ async function getPageName() {
     try {
         const response = await fetch("https://axlwatch.se/wp-json");
         const data = await response.json();
-        // console.log(data);
         pageName.innerText = data.name;
         description.innerText = data.description;
 

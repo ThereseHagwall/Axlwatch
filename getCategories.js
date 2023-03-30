@@ -24,7 +24,6 @@ function printCategories(categories) {
         aLink.innerText = category.name;
 
         aLink.addEventListener("click", () => {
-            console.log(category.id);
             printCategory(category)
         })
         li.appendChild(aLink);

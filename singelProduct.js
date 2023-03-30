@@ -12,7 +12,6 @@ export default async function singelProductPage(id) {
 
     const root = document.getElementById("root");
     root.innerHTML = "";
-    console.log(data); //! Vill man att det är något mer som ska skriva ut kan man ta en titt här =)...
 
     const singelProductContainer = document.createElement("section");
     const productName = document.createElement("h4");
@@ -43,7 +42,6 @@ export default async function singelProductPage(id) {
 
     prodBtn.addEventListener("click", () => {
         createCartLs()
-        console.log("Läggs till i varukorgen")
         let pushedItem = document.createElement('h5');
         pushedItem.innerText = '✅ tillagd i varukorgen';
         setTimeout(function () {

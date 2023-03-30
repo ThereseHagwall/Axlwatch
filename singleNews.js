@@ -24,7 +24,7 @@ function printSingleNews(post) {
         container.innerHTML = "";
         getNews();
         btnContainer.innerHTML = "";
-    }) 
+    })
 
     const newsContainer = document.createElement("div");
     newsContainer.className = "newsContainer";
