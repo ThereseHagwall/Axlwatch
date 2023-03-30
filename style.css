@@ -3,16 +3,16 @@
     margin: auto;
     background-color: lightgray;
     opacity: 0.95;
-    
+
 }
 
 body {
     background-image:url('images/hallstatt.jpg');
     background-size: cover;
-    
-    
+
+
     width: 100%;
-    
+
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -41,7 +41,7 @@ body {
     background: linear-gradient(#a7a7a7, #9198e5);
     font-optical-sizing: auto;
     height: 60px;
-    
+
 }
 
 .footerMenu {
@@ -58,7 +58,7 @@ body {
 li:hover {
     cursor: pointer;
     text-decoration: underline;
-    
+
 }
 
 li {
@@ -138,11 +138,25 @@ li {
     body {
       font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     }
-  }
-  @media screen and (min-width: 1000px) {
+}
+@media screen and (min-width: 1000px) {
     body {
-      font-size: 22px;
+        font-size: 22px;
     }
-  }
+}
 
+.cartImg {
+    width: 50px;
+    height: 50px;
+}
 
+.cartWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around ;
+}
+
+.prodWrapper {
+    display: flex;
+    gap: 1em;
+}

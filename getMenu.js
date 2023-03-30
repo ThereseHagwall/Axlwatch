@@ -9,7 +9,9 @@ import getHome from "./getHome.js";
 import getMyAccount from "./getMyAccount.js";
 import getPrivacyPolicy from "./getPrivacyPolicy.js";
 import getRefundsPolicy from "./getRefundsPolicy.js";
+import printProductCart from "./printProductCart.js";
 import getContactInfo from "./getContactInfo.js";
+
 
 let headerMenu = document.getElementById("headerMenu");
 let footerMenu = document.getElementById("footerMenu");
@@ -84,6 +86,7 @@ function printPages(pages) {
                 productCategory.innerText = "";
                 container.innerText = "";
                 getCart(page);
+                printProductCart()
             } else if (page.title.rendered === "Privacy Policy") {
                 root.innerText = "";
                 productCategory.innerText = "";
