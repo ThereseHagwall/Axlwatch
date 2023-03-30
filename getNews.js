@@ -1,4 +1,5 @@
 'use strict';
+import getSingleNews from "./singleNews.js";
 
 // const root = document.getElementById("root");
 const container = document.getElementById("containerWrapper");
@@ -28,7 +29,7 @@ function printNews(posts) {
 
         postLi.addEventListener("click", () => {
             console.log(post.link);
-
+            getSingleNews(post.id);
         })
 
         postLi.appendChild(aLink);
@@ -36,4 +37,3 @@ function printNews(posts) {
         container.append(newsContainer);
     })
 }
-

@@ -1,7 +1,7 @@
 'use strict';
 
 import printCart from "./printCart.js";
-
+import getCart from "./getCart.js";
 
 export default function postOrder(event) {
     event.preventDefault();
@@ -21,7 +21,6 @@ export default function postOrder(event) {
     const phone = phoneInput ? phoneInput.value : '';
 
     const cart = JSON.parse(localStorage.getItem("cart"));
-
 
     // SKAPA BODY
     let order = {
@@ -72,10 +71,18 @@ event.target.reset();
         body:JSON.stringify(order),
     })
     .then(res => res.json())
-    .then(data => {
-        console.log("Order skickad", data);
+    .then(returnData => {
+        console.log("Order skickad", returnData);
+        
         localStorage.setItem("cart", JSON.stringify([]));
-        printCart();
+        printCart();     
+        let cart2 = document.getElementById("root");
+        cart2.innerHTML = '';
+        let message = document.createElement('p');
+        message.textContent = `Tack för beställningen ${returnData.billing.first_name + ' ' + returnData.billing.last_name}. Ditt ordernummer är ${returnData.id}.`;
+        cart2.appendChild(message);
+
     })
     .catch(err => console.log("err", err));
+
 }
