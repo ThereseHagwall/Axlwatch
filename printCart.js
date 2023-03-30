@@ -6,6 +6,7 @@ export default function printCart() {
 
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";
+        emptyCartBtn.id = "emptyCartBtn";
 
         emptyCartBtn.addEventListener("click", () => {
             localStorage.setItem("cart", JSON.stringify([]));

@@ -7,7 +7,6 @@ export default async function getCart() {
     let cart = document.getElementById("root");
 
     if (JSON.parse(localStorage.getItem("cart")).length > 0) {
-        cart.innerText = (JSON.parse(localStorage.getItem("cart")).length) + " st produkter";
 
         // Create form
         let form = document.createElement('form');
@@ -31,13 +30,13 @@ export default async function getCart() {
             <label for="postcode">Postnummer:</label>
             <input type="text" id="postcode" name="postcode" required><br>
 
-            <input type="submit" value="Beställ">
+            <input type="submit" value="Beställ" id="submitBtn">
         `;
         cart.appendChild(form);
         document.querySelector('#order-form').addEventListener('submit', postOrder);
         // Add event listener to form
-        document.querySelector('#order-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+        document.querySelector('#order-form').addEventListener('submit', function (event) {
+            event.preventDefault();
             let cart = document.getElementById("root");
             cart.innerHTML = '';
             let message = document.createElement('p');
@@ -46,6 +45,7 @@ export default async function getCart() {
         });
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";
+        emptyCartBtn.id = "emptyCartBtn";
 
         emptyCartBtn.addEventListener("click", () => {
             localStorage.setItem("cart", JSON.stringify([]));
