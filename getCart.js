@@ -48,9 +48,6 @@ export default async function getCart() {
             message.textContent = `Vi behandlar din order!`;
             cart.appendChild(message);
  });
-
-
-
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";
 
