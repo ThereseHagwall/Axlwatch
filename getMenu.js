@@ -18,6 +18,7 @@ let footerMenu = document.getElementById("footerMenu");
 let root = document.getElementById("root");
 const container = document.getElementById("containerWrapper");
 const productCategory = document.getElementById("productCategory");
+const btnContainer = document.getElementById('hidden-btn-container');
 
 
 export default async function getMenu() {
@@ -54,48 +55,57 @@ function printPages(pages) {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getHome(page);
             } else if (page.title.rendered === "Nyheter") {
                 productCategory.innerText = "";
                 root.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getNews();
             } else if (page.title.rendered === "Butik") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getCategories();
                 getProducts();
             } else if (page.title.rendered === "Återbetalnings- och returpolicy") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getRefundsPolicy(page);
             } else if (page.title.rendered === "Om oss") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getAboutUs(page);
             } else if (page.title.rendered === "Mitt konto") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getMyAccount(page);
             } else if (page.title.rendered === "Varukorg") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getCart(page);
                 printProductCart()
             } else if (page.title.rendered === "Privacy Policy") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getPrivacyPolicy(page);
             } else if (page.title.rendered === "Kontakt") {
                 root.innerText = "";
                 productCategory.innerText = "";
                 container.innerText = "";
+                btnContainer.innerHTML = "";
                 getContactInfo(page);
             }
         })

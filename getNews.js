@@ -31,6 +31,13 @@ function printNews(posts) {
             console.log(post.link);
             getSingleNews(post.id);
         })
+        postLi.addEventListener("mouseover", () => {
+            postLi.style.cursor = "pointer";
+        });
+
+        postLi.addEventListener("mouseout", () => {
+            postLi.style.cursor = "default";
+        });
 
         postLi.appendChild(aLink);
         newsContainer.append(postLi, info)
