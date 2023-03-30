@@ -38,14 +38,12 @@ export default async function getCart() {
         // Add event listener to form
         document.querySelector('#order-form').addEventListener('submit', function(event) {
         event.preventDefault();
-//         // clear the "cart" element
             let cart = document.getElementById("root");
             cart.innerHTML = '';
-//         // add a message to the "cart" element
             let message = document.createElement('p');
             message.textContent = `Vi behandlar din order!`;
             cart.appendChild(message);
- });
+        });
         let emptyCartBtn = document.createElement("button");
         emptyCartBtn.innerText = "Töm kundvagnen";
 

@@ -44,6 +44,7 @@ function printPages(pages) {
             li.innerText = "";
         } else {
             li.innerText = page.title.rendered;
+            li.id = page.slug;
         }
         if (page.title.rendered === "Kontakt" || page.title.rendered === "Om oss" || page.title.rendered === "Hem" || page.title.rendered === "Nyheter" || page.title.rendered === "Butik" || page.title.rendered === "Varukorg") {
             ulHeader.appendChild(li);

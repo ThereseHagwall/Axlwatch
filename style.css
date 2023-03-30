@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image:url('images/hallstatt.jpg');
+    background-image: url('images/hallstatt.jpg');
     background-size: cover;
 
 
@@ -136,9 +136,10 @@ li {
 
 @media screen and (min-width: 320px) {
     body {
-      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     }
 }
+
 @media screen and (min-width: 1000px) {
     body {
         font-size: 22px;
@@ -153,10 +154,34 @@ li {
 .cartWrapper {
     display: flex;
     flex-direction: column;
-    justify-content:space-around ;
+    justify-content: space-around;
 }
 
 .prodWrapper {
     display: flex;
     gap: 1em;
+}
+
+#kontakt {
+    order: 5;
+}
+
+#om-oss {
+    order: 4;
+}
+
+#varukorg {
+    order: 6;
+}
+
+#butik {
+    order: 2;
+}
+
+#hem {
+    order: 1;
+}
+
+#nyheter {
+    order: 3;
 }

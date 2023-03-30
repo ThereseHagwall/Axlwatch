@@ -46,7 +46,6 @@ export default async function printCategory(category) {
 
             prodBtn.addEventListener("click", () => {
                 createCartLs()
-                console.log("Läggs till i varukorgen")
                 let pushedItem = document.createElement('h5');
                 pushedItem.innerText = '✅ tillagd i varukorgen';
                 setTimeout(function () {
