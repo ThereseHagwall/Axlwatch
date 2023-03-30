@@ -28,7 +28,6 @@ function printNews(posts) {
         info.innerHTML = post.excerpt.rendered;
 
         postLi.addEventListener("click", () => {
-            console.log(post.link);
             getSingleNews(post.id);
         })
 

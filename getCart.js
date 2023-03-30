@@ -4,11 +4,9 @@ const container = document.getElementById("containerWrapper");
 
 import postOrder from "./postOrder.js";
 export default async function getCart() {
-    console.log("Varukorg");
     let cart = document.getElementById("root");
 
     if (JSON.parse(localStorage.getItem("cart")).length > 0) {
-        console.log("Finns produkter");
         cart.innerText = (JSON.parse(localStorage.getItem("cart")).length) + " st produkter";
 
         // Create form
@@ -59,7 +57,6 @@ export default async function getCart() {
         cart.append(emptyCartBtn);
 
     } else {
-        console.log("Tom kundvagn");
         cart.innerText = "Inga produkter"
     }
 }

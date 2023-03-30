@@ -6,6 +6,7 @@ export default function printProductCart() {
 
     const root = document.getElementById("root")
     const cartWrapper = document.createElement("div")
+    const shippingPrice = document.createElement("p");
     let sumArr = [];
     const sum = document.createElement("p");
     let i = 0;
@@ -13,7 +14,13 @@ export default function printProductCart() {
 
         fetchProdId(cart)
         async function fetchProdId() {
-            console.log(cart[i].quantity);
+            if(cart[i].quantity > 1) {
+
+                var qty = cart[i].quantity;
+            } else {
+                var qty = 1;
+            }
+
 
             const prodAmount = document.createElement("p");
             prodAmount.innerText = cart[i].quantity;
@@ -32,15 +39,14 @@ export default function printProductCart() {
         cartWrapper.className = "cartWrapper";
         prodWrapper.className = "prodWrapper";
 
+        const shippingCost = 100;
 
-        sumArr.push(parseInt(data.price))
+        sumArr.push(parseInt(data.price * qty))
         prodId.innerText = data.id;
         prodImg.src = data.images[0].src;
         prodName.innerText = data.name;
         prodPrice.innerText = data.price;
 
-
-        console.log(sumArr);
         function sumArray(array) {
             let sum = 0;
 
@@ -48,15 +54,14 @@ export default function printProductCart() {
                 sum += item;
             });
 
-            console.log(sum);
             return sum;
         }
+        shippingPrice.innerText = `Frakt: ${shippingCost} kr`;
+        sum.innerText = `Totalsumma ${sumArray(sumArr)+ shippingCost}`;
 
-        console.log(`${sum} Totalsumma`);
-        sum.innerText = `Totalsumma ${sumArray(sumArr)}`;
-    root.append(cartWrapper)
-    cartWrapper.append(prodWrapper,sum)
-    prodWrapper.append(prodId, prodImg,prodName,prodPrice,prodAmount)
+        root.append(cartWrapper)
+        cartWrapper.append(prodWrapper,shippingPrice, sum)
+        prodWrapper.append(prodId, prodImg,prodName,prodPrice,prodAmount)
     }
     i++
 });
