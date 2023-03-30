@@ -3,7 +3,6 @@
 import createCartLs from "./createCartLs.js";
 import singelProductPage from "./singelProduct.js";
 import pushGetSaveLS from "./pushGetSaveLS.js";
-import printProductCart from "./printProductCart.js";
 
 let root = document.getElementById("root");
 
@@ -35,17 +34,12 @@ export default async function getProducts() {
         img.src = data.images[0].src;
 
         img.addEventListener("click", () => {
-            console.log("Product");
-            //Här ska man komma in på en produktsida
-            console.log(data.id);
             singelProductPage(data.id);
         })
 
         prodBtn.addEventListener("click", () => {
             createCartLs()
-            console.log("Läggs till i varukorgen")
             pushGetSaveLS(data.id)
-            printProductCart()
         })
 
         productContainer.append(img, productName, oldPrice, currentPrice, prodBtn);

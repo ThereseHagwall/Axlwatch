@@ -20,17 +20,9 @@ export default function postOrder(event) {
     const phoneInput = document.querySelector('#phone');
     const phone = phoneInput ? phoneInput.value : '';
 
-    // const cart = JSON.parse(localStorage.getItem("cart"));
-    // const lineItems = cart.map((id) => ({ product_id: id, quantity: 1 }));
     const cart = JSON.parse(localStorage.getItem("cart"));
-    const lineItems = {};
-    cart.forEach((id) => {
-    if (lineItems[id]) {
-        lineItems[id].quantity++;
-    } else {
-        lineItems[id] = { product_id: id, quantity: 1 };
-    }
-    });
+
+
     // SKAPA BODY
     let order = {
         payment_method: "bacs",
@@ -59,7 +51,7 @@ export default function postOrder(event) {
         },
         line_items:
             // LOOPA IGENOM KUNDVAGN
-            lineItems,
+            cart,
 
         shipping_lines: [
             {
