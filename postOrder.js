@@ -5,7 +5,6 @@ import getCart from "./getCart.js";
 
 export default function postOrder(event) {
     event.preventDefault();
-    console.log("Skicka order");
 
     const nameInput = document.querySelector('#name');
     const name = nameInput ? nameInput.value : '';
@@ -62,7 +61,7 @@ export default function postOrder(event) {
     }
 event.target.reset();
 
-    console.log(order)
+    // console.log(order)
     fetch("https://axlwatch.se/wp-json/wc/v3/orders", {
         method: "POST",
         headers: {
@@ -72,10 +71,10 @@ event.target.reset();
     })
     .then(res => res.json())
     .then(returnData => {
-        console.log("Order skickad", returnData);
-        
+        // console.log("Order skickad", returnData);
+
         localStorage.setItem("cart", JSON.stringify([]));
-        printCart();     
+        printCart();
         let cart2 = document.getElementById("root");
         cart2.innerHTML = '';
         let message = document.createElement('p');
