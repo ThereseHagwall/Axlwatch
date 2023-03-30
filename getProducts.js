@@ -37,9 +37,9 @@ export default async function getProducts() {
             singelProductPage(data.id);
         })
 
+        let pushedItem = document.createElement('h5');
         prodBtn.addEventListener("click", () => {
-            createCartLs()
-            let pushedItem = document.createElement('h5');
+            createCartLs();
             pushedItem.innerText = '✅ tillagd i varukorgen';
             setTimeout(function () {
                 pushedItem.innerText = "";

@@ -152,6 +152,7 @@ li {
 .cartWrapper {
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
     /* margin: 0 auto; */
     /* justify-content: space-around; */
 }
@@ -159,6 +160,10 @@ li {
 .prodWrapper {
     display: flex;
     gap: 1em;
+    border: 0.5px solid black;
+    border-top: none;
+    /* margin: 5px 0 5px 0; */
+    align-items: center;
 }
 
 #kontakt {
@@ -224,4 +229,12 @@ input {
 .singelProductImg {
     max-width: 400px;
     border: 2px solid black;
+}
+
+th {
+    padding: 0 10px 0 10px;
+}
+
+table {
+    border: 1px solid black;
 }
