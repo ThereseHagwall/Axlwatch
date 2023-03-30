@@ -16,6 +16,7 @@ export default async function getCategories() {
 
 
 function printCategories(categories) {
+    const btnContainer = document.getElementById('hidden-btn-container');
     const ul = document.createElement("ul");
     ul.className = "productCategoryMenu";
     categories.map(category => {
@@ -24,6 +25,7 @@ function printCategories(categories) {
         aLink.innerText = category.name;
 
         aLink.addEventListener("click", () => {
+            btnContainer.innerHTML = "";
             printCategory(category)
         })
         li.appendChild(aLink);

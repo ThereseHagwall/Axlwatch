@@ -13,24 +13,24 @@ export default async function getCart() {
         form.id = 'order-form';
         form.innerHTML = `
             <label for="name">Namn:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" required>
 
             <label for="phoneNumber">Telefonnummer:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" required>
 
             <label for="address">Adress:</label>
-            <input type="text" id="address" name="address" required><br>
+            <input type="text" id="address" name="address" required>
 
             <label for="city">Stad:</label>
-            <input type="text" id="city" name="city" required><br>
+            <input type="text" id="city" name="city" required>
 
             <label for="postcode">Postnummer:</label>
-            <input type="text" id="postcode" name="postcode" required><br>
+            <input type="text" id="postcode" name="postcode" required>
 
-            <input type="submit" value="Beställ" id="submitBtn">
+            <input type="submit" value="Skicka beställning" id="submitBtn">
         `;
         cart.appendChild(form);
         document.querySelector('#order-form').addEventListener('submit', postOrder);

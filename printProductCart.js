@@ -9,8 +9,10 @@ export default function printProductCart() {
     const root = document.getElementById("root")
     const cartWrapper = document.createElement("div")
     const shippingPrice = document.createElement("p");
+    shippingPrice.className = "pTag";
     let sumArr = [];
     const sum = document.createElement("p");
+    sum.className = "pTag";
     let i = 0;
     cart.forEach(() => {
 

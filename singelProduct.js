@@ -2,6 +2,8 @@
 
 import createCartLs from "./createCartLs.js";
 import pushGetSaveLS from "./pushGetSaveLS.js";
+import getCategories from "./getCategories.js";
+import getProducts from "./getProducts.js";
 
 export default async function singelProductPage(id) {
 
@@ -13,6 +15,7 @@ export default async function singelProductPage(id) {
     const root = document.getElementById("root");
     root.innerHTML = "";
 
+    const btnContainer = document.getElementById('hidden-btn-container');
     const singelProductContainer = document.createElement("section");
     const productName = document.createElement("h4");
     const singelProductDescription = document.createElement("p")
@@ -51,6 +54,19 @@ export default async function singelProductPage(id) {
         pushGetSaveLS(data.id)
     })
 
-    singelProductContainer.append(img, productName, singelProductDescription, oldPrice, currentPrice, prodBtn);
-    root.append(singelProductContainer);
+    const backBtn = document.createElement("button");
+    backBtn.innerText = "Tillbaka";
+
+    backBtn.addEventListener("click", () => {
+        btnContainer.innerHTML = "";
+        root.innerHTML = "";
+        singelProductContainer.innerHTML = "";
+        // getCategories();
+        getProducts();
+        btnContainer.innerHTML = "";
+    })
+
+    singelProductContainer.append(productName, singelProductDescription, oldPrice, currentPrice, prodBtn);
+    root.append(img, singelProductContainer);
+    btnContainer.append(backBtn)
 }

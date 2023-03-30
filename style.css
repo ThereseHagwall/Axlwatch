@@ -152,7 +152,8 @@ li {
 .cartWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* margin: 0 auto; */
+    /* justify-content: space-around; */
 }
 
 .prodWrapper {
@@ -204,4 +205,23 @@ button:hover,
 #submitBtn:hover {
     cursor: pointer;
     background-color: #b0b6f8;
+}
+
+input {
+    min-width: 100px;
+    margin: 5px;
+}
+
+#order-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pTag {
+    margin: 5px;
+}
+
+.singelProductImg {
+    max-width: 400px;
+    border: 2px solid black;
 }
