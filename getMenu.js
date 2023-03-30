@@ -94,8 +94,8 @@ function printPages(pages) {
                 productCategory.innerText = "";
                 container.innerText = "";
                 btnContainer.innerHTML = "";
-                getCart(page);
                 printProductCart()
+                getCart(page);
             } else if (page.title.rendered === "Privacy Policy") {
                 root.innerText = "";
                 productCategory.innerText = "";

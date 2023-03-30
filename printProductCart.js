@@ -1,7 +1,9 @@
 'use strict';
 
-export default function printProductCart() {
+import createCartLs from "./createCartLs.js";
 
+export default function printProductCart() {
+    createCartLs()
     let cart = JSON.parse(localStorage.getItem("cart"))
 
     const root = document.getElementById("root")
